@@ -42,6 +42,43 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`} suppressHydrationWarning>
+      <head>
+        {/* PostHog cross-origin iframe recording shim — records DOM via rrweb and forwards
+            events to the parent window (admin dashboard) for session replay */}
+        <script dangerouslySetInnerHTML={{ __html: `
+(function() {
+  'use strict';
+  if (window.parent === window) return;
+  var origin = window.location.origin;
+  var isRecording = false;
+  function startRecording() {
+    if (isRecording) return;
+    var record = window.rrweb && window.rrweb.record;
+    if (!record) return;
+    isRecording = true;
+    record({
+      emit: function(event) {
+        try { window.parent.postMessage({ type: 'rrweb', event: event, origin: origin, isCheckout: event.type === 2 }, '*'); } catch(e) {}
+      },
+      collectFonts: true,
+      sampling: { scroll: 150 }
+    });
+  }
+  function loadAndRecord() {
+    if (window.rrweb && window.rrweb.record) { startRecording(); return; }
+    var s = document.createElement('script');
+    s.src = 'https://unpkg.com/@posthog/rrweb-record@0.0.37/dist/rrweb-record.umd.cjs';
+    s.onload = startRecording;
+    document.head.appendChild(s);
+  }
+  window.addEventListener('message', function(e) {
+    if (e.data && (e.data.type === 'posthog:start-recording-v2' || e.data.type === 'posthog:start-recording')) loadAndRecord();
+  });
+  if (document.readyState === 'complete') loadAndRecord();
+  else window.addEventListener('load', loadAndRecord);
+})();
+        `}} />
+      </head>
       <body>
         <Providers>
           <ElementPickerListener />
