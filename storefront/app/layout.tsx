@@ -30,10 +30,10 @@ const body = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Store — Modern Commerce',
-    template: '%s | Store',
+    default: 'Lumière — Jewelry & Phone Cases',
+    template: '%s | Lumière',
   },
-  description: 'Discover curated products crafted with care. A modern ecommerce experience.',
+  description: 'Handcrafted jewelry and premium phone cases. Timeless elegance for everyday moments.',
 }
 
 export default function RootLayout({
