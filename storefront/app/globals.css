@@ -171,8 +171,18 @@ html {
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes slide-in-right {
@@ -195,8 +205,10 @@ html {
   50% { opacity: 0.7; }
 }
 
-.animate-fade-in { animation: fade-in 0.5s ease-out; }
-.animate-fade-in-up { animation: fade-in-up 0.6s ease-out; }
+.animate-fade-in { animation: fade-in 0.7s ease-out both; }
+.animate-fade-in-up { animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-reveal-scale { animation: reveal-scale 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-drift { animation: drift 6s ease-in-out infinite; }
 .animate-slide-in-right { animation: slide-in-right 0.3s ease-out; }
 .animate-slide-out-right { animation: slide-out-right 0.3s ease-out; }
 .animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
