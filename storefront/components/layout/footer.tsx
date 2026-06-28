@@ -48,11 +48,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block">
               <span className="font-heading text-2xl font-semibold">
-                Lumière
+                Maison Privé
               </span>
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Handcrafted jewelry and premium phone cases — where elegance meets everyday life.
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Luxury home fragrance for elevated interiors — signature candles, diffusers, and room perfumes with a couture point of view.
             </p>
           </div>
 
