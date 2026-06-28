@@ -14,14 +14,14 @@ import dynamic from 'next/dynamic'
 
 const CookieConsent = dynamic(() => import('@/components/cookie-consent'))
 
-const heading = Lato({
+const heading = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['500', '600', '700'],
   variable: '--font-heading',
   display: 'swap',
 })
 
-const body = Inter({
+const body = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
   variable: '--font-body',
