@@ -4,32 +4,31 @@
 
 @layer base {
   :root {
-    /* Warm ivory & deep rose-gold palette for jewelry + phone cases */
-    --background: 30 25% 97%;
-    --foreground: 20 15% 10%;
-    --muted: 30 15% 92%;
-    --muted-foreground: 20 8% 45%;
-    --accent: 340 45% 55%;
+    --background: 36 33% 97%;
+    --foreground: 24 18% 11%;
+    --muted: 34 20% 92%;
+    --muted-foreground: 24 9% 42%;
+    --accent: 26 34% 53%;
     --accent-foreground: 0 0% 100%;
-    --border: 30 12% 85%;
-    --ring: 340 45% 55%;
-    --primary: 20 15% 10%;
-    --primary-foreground: 30 25% 97%;
+    --border: 32 16% 84%;
+    --ring: 26 34% 53%;
+    --primary: 24 18% 11%;
+    --primary-foreground: 36 33% 97%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
   }
 
   .dark {
-    --background: 20 10% 7%;
-    --foreground: 30 20% 92%;
-    --muted: 20 8% 13%;
-    --muted-foreground: 30 8% 55%;
-    --accent: 340 45% 60%;
+    --background: 24 15% 8%;
+    --foreground: 34 22% 92%;
+    --muted: 24 10% 14%;
+    --muted-foreground: 28 10% 62%;
+    --accent: 29 32% 58%;
     --accent-foreground: 0 0% 100%;
-    --border: 20 8% 18%;
-    --ring: 340 45% 60%;
-    --primary: 30 20% 92%;
-    --primary-foreground: 20 10% 7%;
+    --border: 24 8% 20%;
+    --ring: 29 32% 58%;
+    --primary: 34 22% 92%;
+    --primary-foreground: 24 15% 8%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
   }
