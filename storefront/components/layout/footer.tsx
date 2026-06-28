@@ -20,12 +20,8 @@ const footerLinks = {
 export default function Footer() {
   const { policies } = usePolicies()
 
-  // Build company links dynamically based on available policies
-  const companyLinks = [
-    { label: 'About', href: '/about' },
-  ]
+  const companyLinks = [{ label: 'About', href: '/about' }]
 
-  // Add policy links only if they're set in the admin
   if (policies?.privacy_policy) {
     companyLinks.push({ label: 'Privacy Policy', href: '/privacy' })
   }
@@ -40,29 +36,27 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t bg-muted/30">
+    <footer className="border-t border-border/70 bg-[#f3ede5]">
       <div className="container-custom py-section-sm">
-        {/* Main Footer */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+          <div>
             <Link href="/" className="inline-block">
-              <span className="font-heading text-2xl font-semibold">
+              <p className="text-[10px] uppercase tracking-[0.34em] text-muted-foreground">Private Fragrance House</p>
+              <span className="font-heading text-[2.4rem] font-semibold tracking-[-0.05em] text-foreground">
                 Maison Privé
               </span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Luxury home fragrance for elevated interiors — signature candles, diffusers, and room perfumes with a couture point of view.
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              Candles, diffusers, and room perfumes created to give every interior the finish of a beautifully kept residence.
             </p>
           </div>
 
-          {/* Shop Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest mb-4">Shop</h3>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.26em] text-foreground/80">Shop</h3>
             <ul className="space-y-3">
               {footerLinks.shop.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                     {link.label}
                   </Link>
                 </li>
@@ -70,13 +64,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Help Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest mb-4">Help</h3>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.26em] text-foreground/80">Service</h3>
             <ul className="space-y-3">
               {footerLinks.help.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                     {link.label}
                   </Link>
                 </li>
@@ -84,13 +77,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest mb-4">Company</h3>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.26em] text-foreground/80">House</h3>
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                     {link.label}
                   </Link>
                 </li>
@@ -99,10 +91,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Lumière. All rights reserved.
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/70 pt-8 sm:flex-row">
+          <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+            &copy; {new Date().getFullYear()} Maison Privé. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <button
@@ -110,11 +101,11 @@ export default function Footer() {
                 clearConsent()
                 window.dispatchEvent(new Event('manage-cookies'))
               }}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
             >
               Manage Cookies
             </button>
-            <span className="text-xs text-muted-foreground">Powered by Amboras</span>
+            <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Powered by Amboras</span>
           </div>
         </div>
       </div>
