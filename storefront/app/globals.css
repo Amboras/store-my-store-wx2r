@@ -118,8 +118,34 @@
 
   /* Soft grain texture overlay */
   .section-texture {
-    background-color: hsl(30 25% 95%);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='transparent'/%3E%3Ccircle cx='1' cy='1' r='0.5' fill='%23c9956c' fill-opacity='0.06'/%3E%3Ccircle cx='3' cy='3' r='0.5' fill='%23c9956c' fill-opacity='0.06'/%3E%3C/svg%3E");
+    background-color: hsl(35 26% 94%);
+    background-image:
+      linear-gradient(180deg, hsl(0 0% 100% / 0.45), transparent 45%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Crect width='6' height='6' fill='transparent'/%3E%3Ccircle cx='1' cy='1' r='0.6' fill='%23b98d63' fill-opacity='0.07'/%3E%3Ccircle cx='5' cy='4' r='0.6' fill='%23b98d63' fill-opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .luxury-panel {
+    background: linear-gradient(145deg, hsl(var(--background) / 0.96), hsl(35 28% 92% / 0.96));
+    box-shadow: 0 24px 80px hsl(24 18% 11% / 0.08);
+  }
+
+  .spotlight-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spotlight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 15%, hsl(0 0% 100% / 0.38) 50%, transparent 85%);
+    transform: translateX(-130%);
+    transition: transform 1s ease;
+    pointer-events: none;
+  }
+
+  .spotlight-card:hover::before {
+    transform: translateX(130%);
   }
 }
 
