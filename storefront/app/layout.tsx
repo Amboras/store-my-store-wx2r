@@ -30,10 +30,10 @@ const body = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Lumière — Jewelry & Phone Cases',
-    template: '%s | Lumière',
+    default: 'Maison Privé — Private Fragrance House',
+    template: '%s | Maison Privé',
   },
-  description: 'Handcrafted jewelry and premium phone cases. Timeless elegance for everyday moments.',
+  description: 'Maison Privé creates statement candles, diffusers, and room perfumes for beautifully dressed interiors.',
 }
 
 export default function RootLayout({
